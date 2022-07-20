@@ -2,6 +2,9 @@
 import { useState } from 'react'
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
+import NavBar from '../layout/Navbar'
+import Footer from "../layout/Footer";
+
 const Login = (props) => {
     const history = useHistory()
     const [formdata, setFormData] = useState({
@@ -24,9 +27,11 @@ const Login = (props) => {
 
     return (
         <div>
+                <NavBar user={props.user} />
             <form onSubmit={handleSubmit}>
 
-
+<div style={{margin:'150px 0 0 0'}}>
+    <h1 style={{margin:'0 0 0 35%'}}> Login</h1>
                 <div className="mb-3">
                     <label className="form-label" htmlFor="email">Email</label>
                     <input type="text"
@@ -50,11 +55,11 @@ const Login = (props) => {
                             setFormData({ ...formdata, [event.target.id]: event.target.value })
                         } />
                 </div>
+                </div>
 
 
 
-
-                <input type="submit" className="btn btn-primary" />
+                <input type="submit" style={{margin:'40px 0 425px 40%',}} className='btn btn-dark' />
             </form>
 
         </div>

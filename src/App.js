@@ -4,7 +4,7 @@ import SignUpandIn from './components/pages/SignUpandIn'
 import About from './components/pages/About'
 import Home from './components/pages/Home'
 import {useState} from 'react'
-import ListBlogsEdit from './components/forms/ListBlogsEdit';
+import ListBlogsEdit from './components/pages/ListBlogsEdit';
 import NewPost from './components/pages/NewPost';
 import UpdateBlog from './components/forms/UpdateBlog';
 import Contact from './components/pages/Contact';
@@ -14,9 +14,12 @@ import Contact from './components/pages/Contact';
   const [user,setUser]=useState(null)
   return (
     <div className="container">
-    <h1>The Blog</h1>
+    
     <Switch>
       <Route exact path ='/' render={properties=>
+      <Home {...properties} user={user}/>} />
+
+        <Route path ='/home' render={properties=>
       <Home {...properties} user={user}/>} />
 
       <Route path ='/login' render={properties=>
