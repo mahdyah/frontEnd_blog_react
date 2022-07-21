@@ -20,7 +20,7 @@ const CreateBlog = (props) => {
                     'x-auth-token': localStorage.getItem('userToken')
                 }
             })
-                .then(res => props.setBlogs([...props.blogs, res.data]))
+                .then(res => props.setBlogs([ res.data,...props.blogs]))
                 .then(history.push('/'))
         } catch (error) {
             console.log(error)

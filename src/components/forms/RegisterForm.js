@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect} from 'react'
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
 import NavBar from '../layout/Navbar'
@@ -11,7 +11,13 @@ const RegisterationForm = (props) => {
         email: '',
         password: ''
     })
-
+//     useEffect=(()=>{
+//     const formData=window.localStorage.getItem('everything-and-nothing')
+//     setFormData(JSON.parse(formData))
+//     },[])
+// useEffect=(()=>{
+//     window.localStorage.setItem('everything-and-nothing',JSON.stringify(formdata))
+// })
     const handleSubmit = (event) => {
         event.preventDefault()
         axios.post('http://localhost:5000/user', formdata)
@@ -19,7 +25,7 @@ const RegisterationForm = (props) => {
                 if (res.data.token && res.data.user) {
                     localStorage.setItem('userToken', res.data.token)
                     props.setUser(res.data.user)
-                    history.push('/')
+                    history.push('/new')
                 } else {
                     console.error(res.data)
                 }

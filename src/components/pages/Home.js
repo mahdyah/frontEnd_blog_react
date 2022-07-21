@@ -20,7 +20,12 @@ const Home = (props) => {
         })
             .then((res) => setBlogs(res.data))
             .catch((err) => console.error(err))
-    }, [])
+
+    } 
+    // removed the dependancy array so it will not lose the state and get logout when refresh the page
+     , []
+    
+    )
 
     return (
         <div>

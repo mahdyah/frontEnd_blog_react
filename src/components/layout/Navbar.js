@@ -9,13 +9,13 @@ const NavBar=(props)=>{
     return(
         <Navbar bg="dark" variant="dark" fixed="top"  style={{margin:'0,0,50px,0'}}>
         <Container>
-          <Navbar.Brand href="home">Everything and Nothing</Navbar.Brand>
+          <Navbar.Brand as={NavLink} to="/">Everything and Nothing</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="home">Home</Nav.Link>
-            <Nav.Link href="about">About</Nav.Link>
-            <Nav.Link href="contact">Contact</Nav.Link>
-            {props.user && <Nav.Link href="new">Create Blog</Nav.Link>}
-            {props.user && <Nav.Link href="update">Edit Blog</Nav.Link>}
+            <Nav.Link as={NavLink} to="/home">Home</Nav.Link>
+            <Nav.Link as={NavLink} to="/about">About</Nav.Link>
+            <Nav.Link as={NavLink} to="/contact">Contact</Nav.Link>
+            {props.user && <Nav.Link as={NavLink} to="/new">Create Blog</Nav.Link>}
+            {props.user && <Nav.Link as={NavLink} to="/update">Edit Blog</Nav.Link>}
             {props.user ? 
              <NavDropdown title='Welcome Back' id="navbarScrollingDropdown">
              <NavDropdown.Item ><span>{props.user.username}</span></NavDropdown.Item>
@@ -24,7 +24,7 @@ const NavBar=(props)=>{
              <NavDropdown/>
     
            </NavDropdown>
-            :<Nav.Link href="login">Login</Nav.Link>}
+            :<Nav.Link as={NavLink} to="/login">Login</Nav.Link>}
           </Nav>
         </Container>
       </Navbar>
