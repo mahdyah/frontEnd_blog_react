@@ -25,7 +25,7 @@ console.log(blog, 'updateBlog 2')
 
 const handleSubmit=(e)=>{
     e.preventDefault()
-    axios.put(`https://mah-blog-api.herokuapp.com//blogs/${id}`,blog,{
+    axios.put(`https://mah-blog-api.herokuapp.com/blogs/${id}`,blog,{
         headers:{
             'x-auth-token': localStorage.getItem('userToken')
         }
