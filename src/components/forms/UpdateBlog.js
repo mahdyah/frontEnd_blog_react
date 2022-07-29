@@ -12,7 +12,7 @@ const history=useHistory()
 console.log(blog, 'updateBlog1')
 
 useEffect(()=>{
-    axios.get(`http://localhost:5000/blogs/${id}`,{
+    axios.get(`https://mah-blog-api.herokuapp.com/${id}`,{
         headers:{
             'x-auth-token': localStorage.getItem('userToken')
         }
@@ -25,7 +25,7 @@ console.log(blog, 'updateBlog 2')
 
 const handleSubmit=(e)=>{
     e.preventDefault()
-    axios.put(`http://localhost:5000/blogs/${id}`,blog,{
+    axios.put(`https://mah-blog-api.herokuapp.com//blogs/${id}`,blog,{
         headers:{
             'x-auth-token': localStorage.getItem('userToken')
         }
@@ -63,53 +63,7 @@ return(
                 <input style={{margin:'20px 20px 180px 40%'}}  className='btn btn-dark' type="submit" value="Edit"/>
                 </div>
             </form>
-//     <div>
-//  <NavBar user={props.user} />
-//  <h1>Edit The Blog</h1>
-//         {
-//         blog && (
-
-//             <form onSubmit={handleSubmit}>
-               
-//   <div style={{margin:'150px 0 0 0'}}>
-//   <h1 style={{margin:'0 0 0 25%'}}> Edit</h1>
-
-//                 <label htmlFor="blog_title">Edit Title</label>
-//                 <input type="text"
-//                     id="blog_title"
-//                     name='blog_title'
-//                     value={blog.blog_title}
-//                     onChange={(e) =>
-//                         setBlog({ ...blog, [e.target.id]: e.target.value })
-//                     } />
-//             </div>
-
-//             <div>
-//                 <textarea name="blog_content" id="blog_content"
-//                     value={blog.blog_content} 
-//                     onChange={(e) => {
-//                         setBlog({ ...blog, [e.target.id]: e.target.value })
-//                     }}>
-//                 </textarea> </div>
-
-//             <div>
-
-//                 <label htmlFor="created_by">Edit Name</label>
-//                 <input type="text"
-//                     id="created_by"
-//                     name='created_by'
-//                     value={blog.created_by}
-//                     onChange={(e) =>
-//                         setBlog({ ...blog, [e.target.id]: e.target.value })
-//                     } />
-//             </div>
-
-//             <input type="submit" value="Edit"/>
-
-//         </form>
-//         )
-//     }
-//     </div>
+ 
     
 )
 

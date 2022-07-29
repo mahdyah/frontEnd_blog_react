@@ -8,7 +8,7 @@ const NewPost=(props)=>{
     const history =useHistory()
     const [blogs, setBlogs]=useState(null)
 useEffect(()=>{
-    axios.get(`http://localhost:5000/blogs`,{
+    axios.get(`https://mah-blog-api.herokuapp.com/blogs`,{
         headers:{
             "x-auth-token":localStorage.getItem('userToken') } })
 .then((res)=>setBlogs(res.data))

@@ -20,7 +20,7 @@ const RegisterationForm = (props) => {
 // })
     const handleSubmit = (event) => {
         event.preventDefault()
-        axios.post('http://localhost:5000/user', formdata)
+        axios.post('https://mah-blog-api.herokuapp.com//user', formdata)
             .then(res => {
                 if (res.data.token && res.data.user) {
                     localStorage.setItem('userToken', res.data.token)

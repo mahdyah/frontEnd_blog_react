@@ -15,7 +15,7 @@ const ListBlogsEdit=(props)=>{
  console.log(props, 'from list blog props')
 
  useEffect(() => {
-    axios.get(`http://localhost:5000/blogs`, {
+    axios.get(`https://mah-blog-api.herokuapp.com/blogs`, {
         headers: {
             "x-auth-token": localStorage.getItem('userToken')
         }
@@ -26,7 +26,7 @@ const ListBlogsEdit=(props)=>{
 
 
     const handleDelete = (blog) => {
-        axios.delete(`http://localhost:5000/blogs/${blog._id}`, {
+        axios.delete(`https://mah-blog-api.herokuapp.com/blogs/${blog._id}`, {
             headers: {
                 "x-auth-token": localStorage.getItem("userToken")
             }

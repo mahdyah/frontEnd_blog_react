@@ -2,7 +2,7 @@ import { useHistory } from 'react-router-dom'
 const LogOut=()=>{
     return (
         <div>
-     <a href="http://localhost:3000/home">
+     <a href="https://mah-blog-api.herokuapp.com/home">
         
         </a>    
         </div>

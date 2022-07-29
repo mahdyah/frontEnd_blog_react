@@ -21,7 +21,7 @@ const Login = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        axios.post('http://localhost:5000/auth', formdata)
+        axios.post('https://mah-blog-api.herokuapp.com/auth', formdata)
             .then(res => {
                 if (res.data.token && res.data.user) {
                     localStorage.setItem('userToken', res.data.token)

@@ -13,7 +13,7 @@ const Home = (props) => {
  console.log(props, 'from home!')
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/blogs`, {
+        axios.get(`https://mah-blog-api.herokuapp.com/blogs`, {
             headers: {
                 "x-auth-token": localStorage.getItem('userToken')
             }

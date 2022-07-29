@@ -15,7 +15,7 @@ const CreateBlog = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault()
         try {
-            axios.post(`http://localhost:5000/blogs`, formData, {
+            axios.post(`https://mah-blog-api.herokuapp.com/blogs`, formData, {
                 headers: {
                     'x-auth-token': localStorage.getItem('userToken')
                 }
