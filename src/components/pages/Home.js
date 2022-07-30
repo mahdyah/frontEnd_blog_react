@@ -10,7 +10,7 @@ import Footer from "../layout/Footer";
 const Home = (props) => {
     const history = useHistory()
     const [blogs, setBlogs] = useState(null)
- console.log(props, 'from home!')
+
 
     useEffect(() => {
         axios.get(`https://mah-blog-api.herokuapp.com/blogs`, {

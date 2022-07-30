@@ -11,8 +11,7 @@ const ListBlogsEdit=(props)=>{
 
     const history = useHistory()
     const [blogs, setBlogs] = useState(null)
- console.log(blogs, 'from list blog blogs')
- console.log(props, 'from list blog props')
+
 
  useEffect(() => {
     axios.get(`https://mah-blog-api.herokuapp.com/blogs`, {
@@ -38,6 +37,7 @@ const ListBlogsEdit=(props)=>{
             .catch((error) => console.error(error))
     }
     const handleUpdate = (blog) => {
+        
         history.push(`/update/${blog._id}`)
     }
 
@@ -48,7 +48,7 @@ const ListBlogsEdit=(props)=>{
             {blogs && blogs.map((blog) => (
 
 <Container style={{padding:'0'}}>
-                    <Row className="px-4 my-5">
+                    <Row className="px-4 my-5" key={blog._id}>
                     <Col>
 
             <div key={blog._id}>
